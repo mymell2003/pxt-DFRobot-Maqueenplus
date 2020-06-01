@@ -30,7 +30,7 @@ enum PIN {
     P15 = 21,
 };
 /**
-* 电机
+* 電機
 */
 enum Motors {
     //% block="left"
@@ -50,7 +50,7 @@ enum Motors1 {
 
 
 /**
- * 正反转
+ * 正反轉
  */
 enum Dir {
     //% block="CW"
@@ -60,7 +60,7 @@ enum Dir {
 }
 
 /**
- * 舵机
+ * 舵機
  */
 enum Servos {
     //% block="S1"
@@ -72,7 +72,7 @@ enum Servos {
 }
 
 /**
- * RGB灯
+ * RGB燈
  */
 enum RGBLight {
     //%block="RGB_L"
@@ -84,7 +84,7 @@ enum RGBLight {
 }
 
 /**
- * 寻线传感器
+ * 尋線感測器
  */
 enum Patrol {
     //% block="L1"
@@ -102,7 +102,7 @@ enum Patrol {
 }
 
 /**
- * 超声波单位
+ * 超音波單位
  */
 enum Sonicunit {
     //% block="cm"
@@ -110,7 +110,7 @@ enum Sonicunit {
 }
 
 /**
- * PID开关
+ * PID開關
  */
 enum PID {
     //%block="OFF"
@@ -119,7 +119,7 @@ enum PID {
     ON = 1
 }
 /**
- * RGB灯颜色
+ * RGB燈顏色
  */
 enum Color {
     //%block="Red"
@@ -182,7 +182,7 @@ namespace DFRobotMaqueenPluss {
     }
 
     /**
-     * 开启PID
+     * 開啟PID
      */
     //%block="PID switch|%pid"
     export function PID(pid: PID): void {
@@ -192,7 +192,7 @@ namespace DFRobotMaqueenPluss {
         pins.i2cWriteBuffer(0x10, buf);
     }
     /**
-     * 控制电机运行
+     * 控制電機運行
      */
     //% block="Motor|%index|direction|%direction|speed|%speed "
     //% speed.min=0 speed.max=255
@@ -226,7 +226,7 @@ namespace DFRobotMaqueenPluss {
         }
     }
     /**
-    * 控制电机停止
+    * 控制電機停止
     */
     //% block="Motor|%index stop"
     export function mototStop(index: Motors): void {
@@ -258,7 +258,7 @@ namespace DFRobotMaqueenPluss {
 
 
     /**
-     * 电机补偿
+     * 電機補償
      */
     //% block="Motor Compensation|%motor speed|%speed"
     //% speed.min=0 speed.max=255
@@ -275,7 +275,7 @@ namespace DFRobotMaqueenPluss {
         }
     }
     /**
-     * 读电机转速
+     * 讀電機轉速
      */
     //%block="read Motor|%index speed"
     export function readSpeed(index: Motors1): number {
@@ -290,7 +290,7 @@ namespace DFRobotMaqueenPluss {
         return -1;
     }
     /**
-     * 读电机正反转
+     * 讀電機正反轉
      */
     //%block="read Motor|%index direction(stop:0,forward:1,back:2)"
     export function readDirection(index: Motors1): number {
@@ -306,7 +306,7 @@ namespace DFRobotMaqueenPluss {
     }
 
     /**
-     * 舵机
+     * 舵機
      */
     //% block="servo|%index|angle|%angle"
     //% angle.min=0  angle.max=180
@@ -332,7 +332,7 @@ namespace DFRobotMaqueenPluss {
     }
 
     /**
-     * RGB灯
+     * RGB燈
      */
     //% block="set |%rgbshow color|%color"
     export function setRGBLight(rgbshow: RGBLight, color: Color): void {
@@ -358,7 +358,7 @@ namespace DFRobotMaqueenPluss {
     }
 
     /**
-     * 寻线传感器
+     * 尋線感測器
      */
     //%block="read patrol sensor|%patrol"
     export function readPatrol(patrol: Patrol): number {
@@ -378,7 +378,7 @@ namespace DFRobotMaqueenPluss {
     }
 
     /**
-     * 读取巡线传感器灰度值
+     * 讀取巡線感測器灰度值
      */
     //% block="read patrol sensor|%patrol voltage "
     export function readPatrolVoltage(patrol: Patrol): number {
@@ -409,7 +409,7 @@ namespace DFRobotMaqueenPluss {
         return patrol_AD;
     }
     /**
-     * 读版本号
+     * 讀版本號
      */
     //%block="get product information"
     export function readVersion(): string {
@@ -421,7 +421,7 @@ namespace DFRobotMaqueenPluss {
         return Version_x;
     }
     /**
-     * 超声波
+     * 超音波
      */
     //%block="read ultrasonic sensor T|%T E|%E cm"
     export function ultraSonic(T: PIN, E: PIN): number {
